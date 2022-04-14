@@ -3,6 +3,8 @@ from flask import Flask
 from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
+from pages import page1, page2
+
 server = Flask(__name__)
 app = Dash(
     __name__,
@@ -46,9 +48,9 @@ app.layout = html.Div([
 def display_page(pathname):
 
     if (pathname == '/page1')|(pathname == '/'): 
-        return_content = html.Div('ページ１だよ')
+        return_content = page1.layout
     elif (pathname == '/page2'):
-        return_content = html.Div('ページ２だよ')
+        return_content = page2.layout
        
     else:
         return_content = '404 not found'

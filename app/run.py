@@ -59,5 +59,8 @@ def display_page(pathname):
 
 
 if __name__ == "__main__":
-
-    server.run(host='0.0.0.0', port=3031, debug=True)
+    app.run_server(
+        host = '0.0.0.0', debug=True, port='3031'
+    )
+    # flaskで起動する場合
+    # server.run(host='0.0.0.0', port=3031, debug=True)

@@ -29,7 +29,6 @@ content = html.Div(id="page-content",
                     style={"padding": "1rem 1.5rem","width":"100%","height":"100%"})
 
 app.layout = html.Div([
-                        dcc.Store(id='side_click'),
                         dcc.Location(id='url', refresh=False),
                         navbar,
                         content

@@ -22,7 +22,7 @@ services:
       - ./nginx/log:/var/log/nginx
 
     ports:
-      - "8050:8050"
+      - "8050:80"
     environment:
       TZ: "Asia/Tokyo"
 

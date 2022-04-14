@@ -8,17 +8,19 @@ app = Dash(
     __name__,
     server=server,
     suppress_callback_exceptions=True,
+    external_stylesheets=[dbc.themes.CERULEAN]
 )
 
 app.title = 'テストページだよ'
 
 
 navbar = dbc.NavbarSimple(
-                children=[],
+                children=[
+                    dbc.NavItem(dbc.NavLink("page1", href="/page1")),
+                    dbc.NavItem(dbc.NavLink("page2", href="/page2")),
+                    dbc.NavItem(dbc.NavLink("page3", href="/page3"))
+                ],
                 brand="テストページだよ",
-                color="dark",
-                dark=True,
-                fluid=True,
                 id = 'navibar'
             )
 
@@ -44,18 +46,13 @@ app.layout = html.Div([
 )
 def display_page(pathname):
 
-    tab = [
-        dbc.NavItem(dbc.NavLink("page1", href="/page1")),
-        dbc.NavItem(dbc.NavLink("page2", href="/page2"))
-    ]
-
-    if (pathname == '/page1'): 
+    if (pathname == '/page1')|(pathname == '/'): 
         return_content = html.Div('ページ１だよ')
-    elif (pathname == '/page2':
+    elif (pathname == '/page2'):
         return_content = html.Div('ページ２だよ')
        
     else:
-        return_content = '404 Page not found'
+        return_content = '404 not found'
 
 
     return [return_content]

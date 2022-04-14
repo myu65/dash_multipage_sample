@@ -4,15 +4,15 @@ layout = html.Div([
     html.H3('Page 1'),
     dcc.Dropdown(
         {f'Page 1 - {i}': f'{i}' for i in ['New York City', 'Montreal', 'Los Angeles']},
-        id='page-1-dropdown'
+        id='dropdown'
     ),
-    html.Div(id='page-1-display-value'),
+    html.Div(id='display-value'),
     dcc.Link('Go to Page 2', href='/page2')
 ])
 
 
 @callback(
-    Output('page-1-display-value', 'children'),
-    Input('page-1-dropdown', 'value'))
+    Output('display-value', 'children'),
+    Input('dropdown', 'value'))
 def display_value(value):
     return f'You have selected {value}'

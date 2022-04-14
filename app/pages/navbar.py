@@ -44,9 +44,13 @@ def add_dash(server):
     def display_page(pathname):
 
         if (pathname == '/page1')|(pathname == '/'): 
-            return_content = html.Div('ページ１だよ')
+            return_content = html.Div(
+                html.Iframe(src='./pages/page1', width='100%', height='900px')
+            )
         elif (pathname == '/page2'):
-            return_content = html.Div('ページ２だよ')
+            return_content = html.Div(
+                html.Iframe(src='./pages/page2', width='100%', height='900px')
+            )
         
         else:
             return_content = '404 not found'

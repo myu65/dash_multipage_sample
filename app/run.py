@@ -8,7 +8,11 @@ with app.app_context():
     app = ad_navbar(app)
 
 
+    from pages.page1 import add_dash as ad_page1
+    app = ad_page1(app)
 
+    from pages.page2 import add_dash as ad_page2
+    app = ad_page2(app)
 
 if __name__ == "__main__":
     # flaskで起動する場合
